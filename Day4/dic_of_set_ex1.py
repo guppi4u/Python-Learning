@@ -8,7 +8,8 @@ def main():
     print(type(books))
 
     for x in books.items():
-        print(x)
+        if x not in books.keys():
+            books.update()
 
 
 main()
