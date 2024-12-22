@@ -1,0 +1,7 @@
+SHOPPING_LIST
+1.Veggies
+2.Fruits
+3.Milk
+4.Eggs
+5.Bread
+6.Drinks
