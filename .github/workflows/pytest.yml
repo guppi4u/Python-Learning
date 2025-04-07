@@ -1,0 +1,38 @@
+name: Run Pytest on Push to Main Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # This can be changed to a different OS if needed
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # You can adjust the Python version if needed
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt  # Assuming you have a requirements.txt for dependencies
+
+      - name: Run Pytest and generate HTML report
+        run: |
+          source venv/bin/activate
+          pytest --maxfail=1 --disable-warnings -q --html=pytest_report.html  # Generate HTML report
+
+      - name: Upload Pytest HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-html-report
+          path: pytest_report.html  # Upload the HTML report
+
