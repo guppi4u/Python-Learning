@@ -1,0 +1,31 @@
+{
+    "name": "Python Selenium Pytest",
+    "image": "mcr.microsoft.com/devcontainers/python:0-3.10",
+    "features": {
+        "ghcr.io/devcontainers/features/browser:1": {
+            "browser": "chrome",
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/chromedriver:1": {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.pytestArgs": [
+                    "tests"
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.test-explorer",
+                "littlefoxcode.vscode-html-preview" // Optional: For previewing HTML reports
+            ]
+        }
+    },
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    "remoteUser": "vscode"
+}
