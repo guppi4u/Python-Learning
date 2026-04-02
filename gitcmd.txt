@@ -1,0 +1,24 @@
+# 1 creating feature branch 
+git feature_name 
+
+# 2 moving to feature branch 
+git checkout feature_name
+
+# 3 commiting feature branch changes 
+git commit -m "abcd..."
+
+# 4 moving to main branch
+git checkout main 
+
+# 5 pulling main 
+git pull origin main 
+
+# 6 merging feature branch to main 
+git merge feature_branch
+
+# 7 pusing main 
+
+git push origin main 
+
+# Deleting feature branch
+git branch -D feature_branch_name
