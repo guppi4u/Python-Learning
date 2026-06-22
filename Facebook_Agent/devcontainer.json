@@ -1,0 +1,36 @@
+{
+  "name": "Playwright Headed Agent Container",
+  "image": "://microsoft.com",
+
+  // Automatically installs system packages required for virtual graphical displays
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    }
+  },
+
+  // Runs system apt-get installations right after the container is built
+  "updateContentCommand": "sudo apt-get update && sudo apt-get install -y xvfb fluxbox x11vnc libasound2 libgbm1",
+
+  // Automatically installs Playwright headless dependencies and browser binaries 
+  "postCreateCommand": "npx playwright install --with-deps",
+
+  // Ensures environment display variables map to the virtual framebuffer slot
+  "containerEnv": {
+    "DISPLAY": ":99"
+  },
+
+  // Automatically configures tracking ports if you ever choose to attach a visual VNC window
+  "forwardPorts": [5900],
+
+  "customizations": {
+    "vscode": {
+      // Pre-installs extensions so your Copilot Agent tools work out-of-the-box
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}
