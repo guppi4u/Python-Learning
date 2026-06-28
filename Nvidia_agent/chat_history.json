@@ -1,0 +1,34 @@
+[
+  {
+    "role": "user",
+    "content": "please take a note of my message \" This is awesome to interact with an agent\""
+  },
+  {
+    "role": "assistant",
+    "content": "Your note has been saved successfully: \"This is awesome to interact with an agent\". I'm glad you're enjoying our conversation!"
+  },
+  {
+    "role": "user",
+    "content": "show my previous notes"
+  },
+  {
+    "role": "assistant",
+    "content": "You've got a note saved from earlier: \"This is awesome to interact with an agent\". I'm glad you're having a great experience!"
+  },
+  {
+    "role": "user",
+    "content": "add more note today \" Sydney weather is good !!!\""
+  },
+  {
+    "role": "assistant",
+    "content": "Your new note has been saved successfully: \"Sydney weather is good !!!\". I'm glad to hear the weather is treating you well in Sydney!"
+  },
+  {
+    "role": "user",
+    "content": "show my saved notes ?"
+  },
+  {
+    "role": "assistant",
+    "content": "You've got two notes saved so far: \n\n1. \"This is awesome to interact with an agent\" (from earlier)\n2. \"Sydney weather is good !!!\" (just now)\n\nI've got a record of all your notes, feel free to add more anytime!"
+  }
+]
